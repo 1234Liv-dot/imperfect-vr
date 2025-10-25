@@ -14,7 +14,7 @@
     <a-plane rotation="-90 0 0" width="100" height="100" src="Rasen.jpg"></a-plane>
      <a-assets timeout="10000">
         <video id="Background" src="Background.mp4" loop="true"></video>
-        <audio id="Atmo" src="Atmo.aac" loop="true" preload="auto"></audio>
+        <audio id="Atmo" src="Atmo.mp3" loop="true" preload="auto"></audio>
       </a-assets>
       <a-sky startplay src="#Background" rotation="0 180 0"></a-sky>
     <a-entity position="0 0 3.8">
@@ -42,14 +42,18 @@
              rotation="0 0 -20"
              animation="property: rotation; to: 0 0 20; dir: alternate; dur: 240; loop: true; easing: linear"></a-box>
     </a-entity>
-      <!-- tree placed behind the camera (camera is at 0 0 3.8) -->
-    <a-entity id="back-tree" position="0 0 6">
-      <!-- trunk -->
-      <a-cylinder position="0 0.5 0" radius="0.12" height="1" color="#8B4513"></a-cylinder>
-      <!-- canopy -->
-      <a-sphere position="0 1.2 0" radius="0.8" color="#2E8B57"></a-sphere>
-      <a-sphere position="-0.35 0.95 0" radius="0.6" color="#2E8B57"></a-sphere>
-      <a-sphere position="0.35 0.95 0" radius="0.6" color="#2E8B57"></a-sphere>
+     <!-- small river to the right of the camera -->
+    <a-entity id="river" position="3 0.01 0" rotation="-90 0 0">
+      <!-- water surface -->
+      <a-plane width="2.5" height="40" color="#2EA3FF" opacity="0.95"></a-plane>
+    </a-entity>
+
+    <!-- river banks -->
+    <a-entity id="river-banks" position="3 0 0">
+      <!-- left bank -->
+      <a-box position="-1.4 0.15 0" width="0.3" height="0.3" depth="40" color="#6B4226"></a-box>
+      <!-- right bank -->
+      <a-box position="1.4 0.15 0" width="0.3" height="0.3" depth="40" color="#6B4226"></a-box>
     </a-entity>
    </a-scene> 
   </body>
