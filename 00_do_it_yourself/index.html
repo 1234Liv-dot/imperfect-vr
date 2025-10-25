@@ -69,6 +69,35 @@
       <a-box position="0.35 0 0" depth="0.02" height="0.02" width="0.75" color="#444"
              rotation="0 0 -18"
              animation="property: rotation; to: 0 0 18; dir: alternate; dur: 200; loop: true; easing: linear"></a-box>
+             <!-- dog running in a circle around the camera (camera at 0 0 3.8) -->
+    <a-entity id="dog-runner" position="0 0 3.8"
+              animation="property: rotation; to: 0 360 0; dur: 6000; loop: true; easing: linear">
+      <!-- dog body group placed at radius 1.8 so it orbits around camera -->
+      <a-entity id="dog" position="1.8 0 0" rotation="0 0 0"
+                animation="property: position; to: 1.8 0.12 0; dir: alternate; dur: 300; loop: true; easing: easeInOutSine">
+        <!-- body -->
+        <a-box position="0 0.35 0" width="0.9" height="0.4" depth="0.4" color="#a0522d"></a-box>
+        <!-- head -->
+        <a-sphere position="0.6 0.5 0.05" radius="0.18" color="#a0522d"></a-sphere>
+        <!-- tail -->
+        <a-box position="-0.55 0.45 -0.05" width="0.05" height="0.15" depth="0.05" color="#a0522d"
+               rotation="0 0 30"
+               animation="property: rotation; to: 0 0 10; dir: alternate; dur: 250; loop: true; easing: linear"></a-box>
+
+        <!-- legs (front left, front right, back left, back right) -->
+        <a-cylinder id="leg-fl" position="0.3 0.05 0.15" radius="0.04" height="0.25" color="#5c3317"
+                    rotation="0 0 0"
+                    animation="property: rotation; to: 40 0 0; dir: alternate; dur: 200; loop: true; easing: linear"></a-cylinder>
+        <a-cylinder id="leg-fr" position="0.3 0.05 -0.15" radius="0.04" height="0.25" color="#5c3317"
+                    rotation="0 0 0"
+                    animation="property: rotation; to: -40 0 0; dir: alternate; dur: 200; loop: true; easing: linear"></a-cylinder>
+        <a-cylinder id="leg-bl" position="-0.3 0.05 0.15" radius="0.04" height="0.25" color="#5c3317"
+                    rotation="0 0 0"
+                    animation="property: rotation; to: -40 0 0; dir: alternate; dur: 200; loop: true; easing: linear; delay: 100"></a-cylinder>
+        <a-cylinder id="leg-br" position="-0.3 0.05 -0.15" radius="0.04" height="0.25" color="#5c3317"
+                    rotation="0 0 0"
+                    animation="property: rotation; to: 40 0 0; dir: alternate; dur: 200; loop: true; easing: linear; delay: 100"></a-cylinder>
+      </a-entity>
     </a-entity>
    </a-scene> 
   </body>
